@@ -1,0 +1,1 @@
+1UI -> (csv , script , config, copied to folder location) -> 2UI -> (Config file written) -> OK (Run script)
