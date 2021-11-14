@@ -5,8 +5,7 @@
 
 ## Store the collected documents through Google Forms into Local Machine.
 
-#### Tech Stack:
-Python, PyQt5, GoogleAPI
+#### Tech Stack: Python, PyQt5, GoogleAPI
 ---
 
 
