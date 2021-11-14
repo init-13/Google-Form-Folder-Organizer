@@ -1,5 +1,7 @@
 
 import pandas
+import csv
+import json
 import os
 import requests
 import glob
@@ -17,16 +19,29 @@ def wrtcnf(string,c):
     
 def choext(ext):
     result = glob.glob('*.{}'.format(ext))
+
     if not result:
+        
         print("NO", ext, "FILE FOUND")
+
+    if ext =='json':
+        try:
+            result.remove('config.json')
+        except:
+            pass
+
+    if len(result)==1:
+        return result[0]
+
+
     else:
-        if len(result)==1:
-            return result[0]
-        else:
-            for i in range(len(result)):
-                print(i+1,result[i],sep='. ')
-            print("CHOOSE", ext, "FILE NUMBER")
-            return result[int(input())-1]
+        for i in range(len(result)):
+            print(i+1,result[i],sep='. ')
+        print("CHOOSE", ext, "FILE NUMBER")
+        return result[int(input())-1]
+        
+    	
+        
         
 def Create_Service(client_secret_file, api_name, api_version, *scopes):
     print(client_secret_file, api_name, api_version, scopes, sep='-')
@@ -85,43 +100,17 @@ SCOPES= ['https://www.googleapis.com/auth/drive']
 def takeinputfromfile():
     
     try:
-        print("APPLY PREVIOUS SETTINGS")
-        x=input().lower()
-        if not(x=='y' or x=='yes'):
-            print(x)
-            return takeinput()
-        file=open('config.txt','r')
-        inlist=[]
-        for i in range(5):
-            x=file.readline()
-            if i==2:
-                sep=x[:-1]
-            else:
-                inlist.append(list(x.split('\n'))[0])
+        file=open('config.json',)
+        data = json.load(file)
             
         file.close()
-        
-        C_ID=inlist[0]
-        
-        xl=list(map(int,inlist[1].split()))
-        
-        #sep=x[2]
-        print(sep)
-        
-        filescol=list(map(int,inlist[2].split()))
-        filesname= list(map(str,inlist[3].split()))
-        
-        
-        return [C_ID,xl,sep,filescol,filesname]
+        C_ID=choext('json')
+        return [C_ID,data['folderC'],data['sep'],data['filesC'],data['filesN']]
     except:
         
         return takeinput()
     
 
-
-
-
-    
     
 def takeinput():
     C_ID=choext('json')
@@ -196,19 +185,23 @@ def downfile(file_id,file_name):
     with open(file_name,'wb') as f:
         f.write(fh.read())
         f.close    
-    
-xmax=max(max(filescol),max(xl))   
+
+csvfile=choext('csv')
+xmax=len(pandas.read_csv(csvfile).axes[1])
 colnames=list(map(lambda x:str('f'+str(x)),(range(1,xmax+1))))
 #print(colnames)
 #print(colnames)
 #input()
-csvfile=choext('csv')
-data = pandas.read_csv(csvfile, names=colnames)
 
+data=pandas.read_csv(csvfile,names=colnames)
+
+#print(data)
 names=list()
+
 for i in xl:
     names.append(eval(str("data.f"+str(i)+".tolist()[1:]")))
 names=list(zip(*names))
+print(names)
 folders=list()
 for i in names:
     folders.append(sep.join(i))    
@@ -231,12 +224,12 @@ def downloadfile(l,st):
             continue
         os.chdir(str(folders[i]))
         print(l[i].split('=')[-1])
-        fname=str(folders[i]+'_'+st)
+        fname=str(st)
         if os.path.exists(fname):
             print(fname +" Exists")
             os.chdir("..")
             continue
-        downfile(l[i].split('=')[-1], str(folders[i]+'_'+st))
+        downfile(l[i].split('=')[-1], str(st))
         print(fname+" Downloaded")
         os.chdir("..")
         #print(os.getcwd())

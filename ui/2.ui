@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>537</width>
-    <height>424</height>
+    <width>891</width>
+    <height>546</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,45 +19,41 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>261</width>
-      <height>341</height>
+      <width>571</width>
+      <height>451</height>
      </rect>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>600</x>
       <y>10</y>
       <width>113</width>
       <height>20</height>
      </rect>
     </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>Col. sep by space</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>600</x>
       <y>60</y>
       <width>113</width>
       <height>20</height>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>110</y>
-      <width>113</width>
-      <height>211</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>600</x>
       <y>30</y>
       <width>221</width>
       <height>20</height>
@@ -70,7 +66,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>600</x>
       <y>80</y>
       <width>221</width>
       <height>20</height>
@@ -83,8 +79,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>320</y>
+      <x>600</x>
+      <y>370</y>
       <width>201</width>
       <height>31</height>
      </rect>
@@ -96,7 +92,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>760</x>
       <y>10</y>
       <width>75</width>
       <height>21</height>
@@ -109,7 +105,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>760</x>
       <y>60</y>
       <width>75</width>
       <height>21</height>
@@ -122,8 +118,8 @@
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>190</y>
+      <x>790</x>
+      <y>380</y>
       <width>75</width>
       <height>21</height>
      </rect>
@@ -135,10 +131,10 @@
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>360</y>
-      <width>31</width>
-      <height>21</height>
+      <x>730</x>
+      <y>430</y>
+      <width>51</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
@@ -148,14 +144,27 @@
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>360</y>
-      <width>51</width>
-      <height>21</height>
+      <x>790</x>
+      <y>430</y>
+      <width>71</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>110</y>
+      <width>261</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>Col. num filename1.fileextention1                 Example: 4 Aadhar.pdf                                               3 Photo.jpg</string>
     </property>
    </widget>
   </widget>
@@ -164,7 +173,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>537</width>
+     <width>891</width>
      <height>21</height>
     </rect>
    </property>
