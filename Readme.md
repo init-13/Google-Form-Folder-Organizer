@@ -5,8 +5,7 @@
 
 ## Store the collected documents through Google Forms into Local Machine.
 
-**Tech Stack:** 
----
+#### Tech Stack:
 Python, PyQt5, GoogleAPI
 ---
 
@@ -15,6 +14,7 @@ Python, PyQt5, GoogleAPI
 ## To Start ->
 
 >python Requirement.py
+---
 > python main.py
 
 ## or 
