@@ -46,6 +46,7 @@ class MainWindow2(QMainWindow):
         widget.removeWidget(window2)
         sec = dummy()
         widget.addWidget(sec)
+        sec.Runner()
         widget.setFixedWidth(500)
         widget.setFixedHeight(150)
         
