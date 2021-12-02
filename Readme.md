@@ -1,5 +1,5 @@
 # GOOGLE DRIVE ORGANIZER
----
+
 ![ScreenShots](ss/Screenshot_1.png "Window1")
 ![ScreenShots](ss/Screenshot_2.png "Window2")
 ![ScreenShots](ss/Screenshot_3.png "OUTPUT")
@@ -22,7 +22,5 @@
 ## or 
 
 > py -m main.py
-
-## SCREENSHOTS:
 
 
